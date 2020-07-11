@@ -3,24 +3,34 @@
         <img alt="Vue logo" src="./assets/logo.png" />
         <!-- <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />-->
         <WSConnectionComponent />
-        <WSBaseComtractComponent />
+        <WSBaseContractComponent />
+        <WSCredentialContractComponent />
     </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import WSConnectionComponent from './components/WSConnectionComponent.vue';
-import WSBaseComtractComponent from './components/WSBaseComtractComponent.vue';
+import WSBaseContractComponent from './components/WSBaseContractComponent.vue';
+import WSCredentialContractComponent from './components/WSCredentialContractComponent.vue';
 
 @Component({
     components: {
         WSConnectionComponent,
-        WSBaseComtractComponent
+        WSBaseContractComponent,
+        WSCredentialContractComponent
     }
 })
 export default class App extends Vue {
     constructor() {
         super();
+        console.log('[App] constructor');
+    }
+    mounted(){
+        console.log('[App] mounted');
+    }
+    destroyed(){
+        console.log('[App] destroyed');
     }
 }
 </script>

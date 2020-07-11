@@ -1,6 +1,6 @@
 <template>
     <div style="text-align: left">
-        <h2>@nexjs/ws - connection</h2>
+        <h2>@nexjs/ws - Connection</h2>
         <button @click="connect">connect</button>
         <button @click="disconnect">disconnect</button>
         <input type="text" :value="url" />

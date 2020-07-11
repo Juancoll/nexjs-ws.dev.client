@@ -11,10 +11,6 @@
                 demo.print()
             </li>
             <li>
-                <button @click="printWithCredentials">send</button>
-                demo.printWithCredentials()
-            </li>
-            <li>
                 <button @click="delay">send</button> demo.delay()
             </li>
             <li>
@@ -29,16 +25,16 @@ import { Component, Vue } from 'vue-property-decorator';
 import { wsapi } from '@/wsapi';
 
 @Component
-export default class WSBaseComtractComponent extends Vue {
+export default class WSBaseContractComponent extends Vue {
     url = 'http://localhost:3000';
 
     constructor() {
         super();
-        console.log('[WSBaseComtractComponent] constructor()');
+        console.log('[WSBaseContractComponent] constructor()');
     }
 
     async mounted() {
-        console.log('[WSBaseComtractComponent] mounted()');
+        console.log('[WSBaseContractComponent] mounted()');
         wsapi.baseContract.onUpdate.on(() =>
             console.log(`[baseContract] onUpdate`)
         );
@@ -47,16 +43,17 @@ export default class WSBaseComtractComponent extends Vue {
         );
     }
     async destroyed() {
-        console.log('[WSBaseComtractComponent] destroyed()');
+        console.log('[WSBaseContractComponent] destroyed()');
         wsapi.baseContract.onUpdate.off();
+        wsapi.baseContract.onDataUpdate.off();
     }
 
     async subscribe() {
         try {
-            console.log('[WSBaseComtractComponent] subscribe request');
+            console.log('[WSBaseContractComponent] subscribe request');
             await wsapi.baseContract.onUpdate.sub();
             await wsapi.baseContract.onDataUpdate.sub();
-            console.log('[WSBaseComtractComponent] subscribe response');
+            console.log('[WSBaseContractComponent] subscribe response');
         } catch (err) {
             console.warn(err);
         }
@@ -64,10 +61,10 @@ export default class WSBaseComtractComponent extends Vue {
 
     async unsubscribe() {
         try {
-            console.log('[WSBaseComtractComponent] unsubscribe request');
+            console.log('[WSBaseContractComponent] unsubscribe request');
             await wsapi.baseContract.onUpdate.unsub();
             await wsapi.baseContract.onDataUpdate.unsub();
-            console.log('[WSBaseComtractComponent] unsubscribe response');
+            console.log('[WSBaseContractComponent] unsubscribe response');
         } catch (err) {
             console.warn(err);
         }
@@ -75,9 +72,9 @@ export default class WSBaseComtractComponent extends Vue {
 
     async print() {
         try {
-            console.log('[WSBaseComtractComponent] print() request');
+            console.log('[WSBaseContractComponent] print() request');
             await wsapi.baseContract.print();
-            console.log('[WSBaseComtractComponent] print() response');
+            console.log('[WSBaseContractComponent] print() response');
         } catch (err) {
             console.warn(err);
         }
@@ -85,9 +82,9 @@ export default class WSBaseComtractComponent extends Vue {
 
     async delay() {
         try {
-            console.log('[WSBaseComtractComponent] delay() request');
-            await wsapi.baseContract.delay(5000);
-            console.log('[WSBaseComtractComponent] delay() response');
+            console.log('[WSBaseContractComponent] delay() request');
+            await wsapi.baseContract.delay(2000);
+            console.log('[WSBaseContractComponent] delay() response');
         } catch (err) {
             console.warn(err);
         }
@@ -95,9 +92,9 @@ export default class WSBaseComtractComponent extends Vue {
 
     async notify() {
         try {
-            console.log('[WSBaseComtractComponent] notify() request');
+            console.log('[WSBaseContractComponent] notify() request');
             await wsapi.baseContract.notify();
-            console.log('[WSBaseComtractComponent] notify() response');
+            console.log('[WSBaseContractComponent] notify() response');
         } catch (err) {
             console.warn(err);
         }
