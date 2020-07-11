@@ -2,17 +2,20 @@
     <div id="app">
         <img alt="Vue logo" src="./assets/logo.png" />
         <!-- <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />-->
-        <WSBasics />
+        <WSConnectionComponent />
+        <WSBaseComtractComponent />
     </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import WSBasics from './components/WSBasics.vue';
+import WSConnectionComponent from './components/WSConnectionComponent.vue';
+import WSBaseComtractComponent from './components/WSBaseComtractComponent.vue';
 
 @Component({
     components: {
-        WSBasics
+        WSConnectionComponent,
+        WSBaseComtractComponent
     }
 })
 export default class App extends Vue {
