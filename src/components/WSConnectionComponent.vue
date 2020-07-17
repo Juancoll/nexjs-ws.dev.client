@@ -1,9 +1,13 @@
 <template>
     <div style="text-align: left">
         <h2>@nexjs/ws - Connection</h2>
-        <button @click="connect">connect</button>
-        <button @click="disconnect">disconnect</button>
-        <input type="text" :value="url" />
+        <ul>
+            <li>
+                <button @click="connect">connect</button>
+                <button @click="disconnect">disconnect</button>
+                <input type="text" :value="url" />
+            </li>
+        </ul>
     </div>
 </template>
 

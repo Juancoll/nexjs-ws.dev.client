@@ -5,6 +5,7 @@
         <WSConnectionComponent />
         <WSBaseContractComponent />
         <WSCredentialContractComponent />
+        <WSAuthContractComponent />
     </div>
 </template>
 
@@ -13,12 +14,14 @@ import { Component, Vue } from 'vue-property-decorator';
 import WSConnectionComponent from './components/WSConnectionComponent.vue';
 import WSBaseContractComponent from './components/WSBaseContractComponent.vue';
 import WSCredentialContractComponent from './components/WSCredentialContractComponent.vue';
+import WSAuthContractComponent from './components/WSAuthContractComponent.vue';
 
 @Component({
     components: {
         WSConnectionComponent,
         WSBaseContractComponent,
-        WSCredentialContractComponent
+        WSCredentialContractComponent,
+        WSAuthContractComponent
     }
 })
 export default class App extends Vue {
@@ -26,10 +29,10 @@ export default class App extends Vue {
         super();
         console.log('[App] constructor');
     }
-    mounted(){
+    mounted() {
         console.log('[App] mounted');
     }
-    destroyed(){
+    destroyed() {
         console.log('[App] destroyed');
     }
 }
@@ -43,5 +46,8 @@ export default class App extends Vue {
     text-align: center;
     color: #2c3e50;
     margin-top: 60px;
+}
+button {
+    width: 100px;
 }
 </style>
