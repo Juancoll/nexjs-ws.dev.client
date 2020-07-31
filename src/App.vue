@@ -1,6 +1,7 @@
 <template>
     <div id="app">
-        <img alt="Vue logo" src="./assets/logo.png" />
+        <h1>nexjs-client-dev</h1>
+        <img alt="Vue logo" src="./assets/icon_256.png" />
         <!-- <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />-->
         <WSConnectionComponent />
         <WSBaseContractComponent />
@@ -39,13 +40,19 @@ export default class App extends Vue {
 </script>
 
 <style lang="scss">
+html,
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: black;
+}
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
+    color: lightgray;
+    padding: 10px;
 }
 button {
     width: 100px;

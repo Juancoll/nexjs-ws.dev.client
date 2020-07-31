@@ -9,7 +9,6 @@
     "ws:update": "nexjs ts ws up-client -s ../nexjs-ws.dev-project.server -o ./src/lib/wsclient"
   },
   "dependencies": {
-    "@nexjs/wsclient": "^1.0.6",
     "@types/socket.io-client": "^1.4.33",
     "core-js": "^3.6.5",
     "socket.io-client": "^2.3.0",
