@@ -17,7 +17,7 @@ import { wsapi } from '@/wsapi';
 
 @Component
 export default class WSConnectionComponent extends Vue {
-    url = 'http://localhost:3001';
+    url = 'http://localhost:3000';
 
     constructor() {
         super();
