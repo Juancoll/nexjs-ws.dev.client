@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <h1>nexjs-ws.dev-project.client</h1>
+        <h1>nexjs-ws.dev.client</h1>
         <img class="logo" alt="Vue logo" src="./assets/icon_256.png" />
         <!-- <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />-->
         <WSConnectionComponent />

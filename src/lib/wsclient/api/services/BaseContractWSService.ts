@@ -1,4 +1,4 @@
-import { WSServiceBase, HubNotification, HubNotificationCredentials, HubNotificationCredentialsData, HubNotificationData } from '../../../../@nexjs/wsclient';
+import { WSServiceBase, HubNotification, HubNotificationCredentials, HubNotificationCredentialsData, HubNotificationData } from '@/nexjs/wsclient';
 
 import { AnyData } from '../../models/AnyData';
 

@@ -1,4 +1,4 @@
-import { WSApiBase, IWSBase } from '../../../@nexjs/wsclient';
+import { WSApiBase, IWSBase } from '@/nexjs/wsclient';
 
 import { AuthContractWSService } from './services/AuthContractWSService';
 import { BaseContractWSService } from './services/BaseContractWSService';

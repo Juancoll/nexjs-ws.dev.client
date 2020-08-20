@@ -1,4 +1,4 @@
-import { WSServiceBase, HubNotification, HubNotificationCredentials, HubNotificationCredentialsData, HubNotificationData } from '../../../../@nexjs/wsclient';
+import { WSServiceBase, HubNotification, HubNotificationCredentials, HubNotificationCredentialsData, HubNotificationData } from '@/nexjs/wsclient';
 
 import { AnyData } from '../../models/AnyData';
 
@@ -10,10 +10,10 @@ export class CredentialContractWSService extends WSServiceBase {
     //#region [ hub ]
 
     // isAuth: false
-    public readonly onUpdate = new HubNotificationCredentials<any>(this._hub, this.name, 'onUpdate');
+    public readonly onUpdate = new HubNotificationCredentials<string>(this._hub, this.name, 'onUpdate');
 
     // isAuth: false
-    public readonly onDataUpdate = new HubNotificationCredentialsData<any, AnyData>(this._hub, this.name, 'onDataUpdate');
+    public readonly onDataUpdate = new HubNotificationCredentialsData<string, AnyData>(this._hub, this.name, 'onDataUpdate');
     //#endregion
 
     //#region [ rest ]
