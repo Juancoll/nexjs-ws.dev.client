@@ -23,9 +23,7 @@
                 <button @click="print">send</button>
                 demo.print()
             </li>
-            <li>
-                <button @click="notify">send</button> demo.notify()
-            </li>
+            <li><button @click="notify">send</button> demo.notify()</li>
         </ul>
     </div>
 </template>
@@ -53,7 +51,7 @@ export default class WSAuthContractComponent extends Vue {
         wsapi.authContract.onUpdate.on(() =>
             console.log(`[credentialContract] onUpdate`)
         );
-        wsapi.authContract.onDataUpdate.on(data =>
+        wsapi.authContract.onDataUpdate.on((data) =>
             console.log(`[credentialContract] onDataUpdate`, data)
         );
     }
@@ -70,7 +68,7 @@ export default class WSAuthContractComponent extends Vue {
             console.log('[WSAuthContractComponent] register');
             await wsapi.auth.register({
                 email: this.registerEmail,
-                password: this.registerPassword
+                password: this.registerPassword,
             });
         } catch (err) {
             console.warn(err);
@@ -82,7 +80,7 @@ export default class WSAuthContractComponent extends Vue {
             console.log('[WSAuthContractComponent] login');
             await wsapi.auth.login({
                 email: this.registerEmail,
-                password: this.registerPassword
+                password: this.registerPassword,
             });
         } catch (err) {
             console.warn(err);
@@ -101,8 +99,8 @@ export default class WSAuthContractComponent extends Vue {
     async subscribe() {
         try {
             console.log('[WSAuthContractComponent] subscribe request');
-            await wsapi.authContract.onUpdate.sub('user-credentials-001');
-            await wsapi.authContract.onDataUpdate.sub('user-credentials-002');
+            await wsapi.authContract.onUpdate.sub(3434);
+            await wsapi.authContract.onDataUpdate.sub(3434);
             console.log('[WSAuthContractComponent] subscribe response');
         } catch (err) {
             console.warn(err);

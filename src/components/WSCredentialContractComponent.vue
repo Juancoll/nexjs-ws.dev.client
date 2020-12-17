@@ -10,9 +10,7 @@
                 <button @click="print">send</button>
                 demo.print()
             </li>
-            <li>
-                <button @click="notify">send</button> demo.notify()
-            </li>
+            <li><button @click="notify">send</button> demo.notify()</li>
         </ul>
     </div>
 </template>
@@ -35,7 +33,7 @@ export default class WSCredentialContractComponent extends Vue {
         wsapi.credentialContract.onUpdate.on(() =>
             console.log(`[credentialContract] onUpdate`)
         );
-        wsapi.credentialContract.onDataUpdate.on(data =>
+        wsapi.credentialContract.onDataUpdate.on((data) =>
             console.log(`[credentialContract] onDataUpdate`, data)
         );
     }
@@ -48,10 +46,8 @@ export default class WSCredentialContractComponent extends Vue {
     async subscribe() {
         try {
             console.log('[WSCredentialContractComponent] subscribe request');
-            await wsapi.credentialContract.onUpdate.sub('user-credentials-001');
-            await wsapi.credentialContract.onDataUpdate.sub(
-                'user-credentials-002'
-            );
+            await wsapi.credentialContract.onUpdate.sub(3434);
+            await wsapi.credentialContract.onDataUpdate.sub(3434);
             console.log('[WSCredentialContractComponent] subscribe response');
         } catch (err) {
             console.warn(err);
@@ -72,7 +68,7 @@ export default class WSCredentialContractComponent extends Vue {
     async print() {
         try {
             console.log('[WSCredentialContractComponent] print() request');
-            await wsapi.credentialContract.print('user-credentials-003');
+            await wsapi.credentialContract.print();
             console.log('[WSCredentialContractComponent] print() response');
         } catch (err) {
             console.warn(err);

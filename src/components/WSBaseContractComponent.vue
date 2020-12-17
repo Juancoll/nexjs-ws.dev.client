@@ -10,12 +10,8 @@
                 <button @click="print">send</button>
                 demo.print()
             </li>
-            <li>
-                <button @click="delay">send</button> demo.delay()
-            </li>
-            <li>
-                <button @click="notify">send</button> demo.notify()
-            </li>
+            <li><button @click="delay">send</button> demo.delay()</li>
+            <li><button @click="notify">send</button> demo.notify()</li>
         </ul>
     </div>
 </template>
@@ -38,7 +34,7 @@ export default class WSBaseContractComponent extends Vue {
         wsapi.baseContract.onUpdate.on(() =>
             console.log(`[baseContract] onUpdate`)
         );
-        wsapi.baseContract.onDataUpdate.on(data =>
+        wsapi.baseContract.onDataUpdate.on((data) =>
             console.log(`[baseContract] onDataUpdate`, data)
         );
     }
