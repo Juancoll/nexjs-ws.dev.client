@@ -33,21 +33,58 @@ export default class WSCredentialContractComponent extends Vue {
         wsapi.credentialContract.onUpdate.on(() =>
             console.log(`[credentialContract] onUpdate`)
         );
-        wsapi.credentialContract.onDataUpdate.on((data) =>
-            console.log(`[credentialContract] onDataUpdate`, data)
+        wsapi.credentialContract.onUpdateData.on((data) =>
+            console.log(`[credentialContract] onUpdateData`, data)
+        );
+
+        wsapi.credentialContract.onUpdateSelection.on(() =>
+            console.log(`[credentialContract] onUpdateSelection`)
+        );
+        wsapi.credentialContract.onUpdateSelectionData.on((data) =>
+            console.log(`[credentialContract] onUpdateSelectionData`, data)
+        );
+
+        wsapi.credentialContract.onUpdateValidation.on(() =>
+            console.log(`[credentialContract] onUpdateValidation`)
+        );
+        wsapi.credentialContract.onUpdateValidationData.on((data) =>
+            console.log(`[credentialContract] onUpdateValidationData`, data)
+        );
+
+        wsapi.credentialContract.onUpdateValidationSelection.on(() =>
+            console.log(`[credentialContract] onUpdateValidationSelection`)
+        );
+        wsapi.credentialContract.onUpdateValidationSelectionData.on((data) =>
+            console.log(`[credentialContract] onUpdateValidationData`, data)
         );
     }
     async destroyed() {
         console.log('[WSCredentialContractComponent] destroyed()');
         wsapi.credentialContract.onUpdate.off();
-        wsapi.credentialContract.onDataUpdate.off();
+        wsapi.credentialContract.onUpdateData.off();
+        wsapi.credentialContract.onUpdateSelection.off();
+        wsapi.credentialContract.onUpdateSelectionData.off();
+        wsapi.credentialContract.onUpdateValidation.off();
+        wsapi.credentialContract.onUpdateValidationData.off();
+        wsapi.credentialContract.onUpdateValidationSelection.off();
+        wsapi.credentialContract.onUpdateValidationSelectionData.off();
     }
 
     async subscribe() {
         try {
             console.log('[WSCredentialContractComponent] subscribe request');
-            await wsapi.credentialContract.onUpdate.sub(3434);
-            await wsapi.credentialContract.onDataUpdate.sub(3434);
+            // await wsapi.credentialContract.onUpdate.sub();
+            // await wsapi.credentialContract.onUpdateData.sub();
+            // await wsapi.credentialContract.onUpdateSelection.sub();
+            // await wsapi.credentialContract.onUpdateSelectionData.sub();
+            // await wsapi.credentialContract.onUpdateValidation.sub(1234);
+            // await wsapi.credentialContract.onUpdateValidationData.sub(1234);
+            // await wsapi.credentialContract.onUpdateValidationSelection.sub(
+            //     1234
+            // );
+            await wsapi.credentialContract.onUpdateValidationSelectionData.sub(
+                1234
+            );
             console.log('[WSCredentialContractComponent] subscribe response');
         } catch (err) {
             console.warn(err);
@@ -58,7 +95,13 @@ export default class WSCredentialContractComponent extends Vue {
         try {
             console.log('[WSCredentialContractComponent] unsubscribe request');
             await wsapi.credentialContract.onUpdate.unsub();
-            await wsapi.credentialContract.onDataUpdate.unsub();
+            await wsapi.credentialContract.onUpdateData.unsub();
+            await wsapi.credentialContract.onUpdateSelection.unsub();
+            await wsapi.credentialContract.onUpdateSelectionData.unsub();
+            await wsapi.credentialContract.onUpdateValidation.unsub();
+            await wsapi.credentialContract.onUpdateValidationData.unsub();
+            await wsapi.credentialContract.onUpdateValidationSelection.unsub();
+            await wsapi.credentialContract.onUpdateValidationSelectionData.unsub();
             console.log('[WSCredentialContractComponent] unsubscribe response');
         } catch (err) {
             console.warn(err);

@@ -99,8 +99,8 @@ export default class WSAuthContractComponent extends Vue {
     async subscribe() {
         try {
             console.log('[WSAuthContractComponent] subscribe request');
-            await wsapi.authContract.onUpdate.sub(3434);
-            await wsapi.authContract.onDataUpdate.sub(3434);
+            await wsapi.authContract.onUpdate.sub();
+            await wsapi.authContract.onDataUpdate.sub();
             console.log('[WSAuthContractComponent] subscribe response');
         } catch (err) {
             console.warn(err);

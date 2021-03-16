@@ -1,4 +1,4 @@
-import { WSApi } from './lib/wsclient';
+import { WSApi } from './lib/wsclient-cli';
 import { User, Token } from './models/';
 import { SocketIOClient } from '@/@nexjs/wsclient';
 

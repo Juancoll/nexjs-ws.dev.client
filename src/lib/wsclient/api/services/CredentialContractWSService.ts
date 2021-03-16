@@ -9,11 +9,17 @@ export class CredentialContractWSService extends lib.WSServiceBase {
 
     //#region [ hub ]
 
-    // isAuth: false
-    public readonly onUpdate = new lib.HubEventSelector<number>(this._hub, this.name, 'onUpdate')
+    public readonly onUpdate = new lib.HubEvent(this._hub, this.name, 'onUpdate')
+    public readonly onUpdateData = new lib.HubEventData<AnyData>(this._hub, this.name, 'onUpdateData')
 
-    // isAuth: false
-    public readonly onDataUpdate = new lib.HubEventSelectorData<number, AnyData>(this._hub, this.name, 'onDataUpdate')
+    public readonly onUpdateSelection = new lib.HubEvent(this._hub, this.name, 'onUpdateSelection')
+    public readonly onUpdateSelectionData = new lib.HubEventData<AnyData>(this._hub, this.name, 'onUpdateSelectionData')
+
+    public readonly onUpdateValidation = new lib.HubEventValidation<number>(this._hub, this.name, 'onUpdateValidation')
+    public readonly onUpdateValidationData = new lib.HubEventValidationData<number, AnyData>(this._hub, this.name, 'onUpdateValidationData')
+
+    public readonly onUpdateValidationSelection = new lib.HubEventValidation<number>(this._hub, this.name, 'onUpdateValidationSelection')
+    public readonly onUpdateValidationSelectionData = new lib.HubEventValidationData<number, AnyData>(this._hub, this.name, 'onUpdateValidationSelectionData')
     //#endregion
 
     //#region [ rest ]
