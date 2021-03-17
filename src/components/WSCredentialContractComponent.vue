@@ -73,15 +73,15 @@ export default class WSCredentialContractComponent extends Vue {
     async subscribe() {
         try {
             console.log('[WSCredentialContractComponent] subscribe request');
-            // await wsapi.credentialContract.onUpdate.sub();
-            // await wsapi.credentialContract.onUpdateData.sub();
-            // await wsapi.credentialContract.onUpdateSelection.sub();
-            // await wsapi.credentialContract.onUpdateSelectionData.sub();
-            // await wsapi.credentialContract.onUpdateValidation.sub(1234);
-            // await wsapi.credentialContract.onUpdateValidationData.sub(1234);
-            // await wsapi.credentialContract.onUpdateValidationSelection.sub(
-            //     1234
-            // );
+            await wsapi.credentialContract.onUpdate.sub();
+            await wsapi.credentialContract.onUpdateData.sub();
+            await wsapi.credentialContract.onUpdateSelection.sub();
+            await wsapi.credentialContract.onUpdateSelectionData.sub();
+            await wsapi.credentialContract.onUpdateValidation.sub(1234);
+            await wsapi.credentialContract.onUpdateValidationData.sub(1234);
+            await wsapi.credentialContract.onUpdateValidationSelection.sub(
+                1234
+            );
             await wsapi.credentialContract.onUpdateValidationSelectionData.sub(
                 1234
             );

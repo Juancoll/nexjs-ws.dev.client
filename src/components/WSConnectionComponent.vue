@@ -5,7 +5,9 @@
             <li>
                 <button @click="connect">connect</button>
                 <button @click="disconnect">disconnect</button>
-                <input type="text" :value="url" />
+                <input type="text" v-model="url" />
+                <input type="text" v-model="path" style="width: 100px" />
+                <input type="text" v-model="nsp" style="width: 50px" />
             </li>
         </ul>
     </div>
@@ -18,6 +20,8 @@ import { wsapi } from '@/wsapi';
 @Component
 export default class WSConnectionComponent extends Vue {
     url = 'http://localhost:3000';
+    path = '/socket.io';
+    nsp = '/';
 
     constructor() {
         super();
@@ -33,8 +37,10 @@ export default class WSConnectionComponent extends Vue {
 
     async connect() {
         try {
-            console.log('[WSConnectionComponent] connect() request');
-            await wsapi.ws.connectAsync(this.url, '/socket.io', '');
+            console.log(
+                `[WSConnectionComponent] connect(${this.url}, ${this.path}, ${this.nsp}) request`
+            );
+            await wsapi.ws.connectAsync(this.url, this.path, this.nsp);
             console.log('[WSConnectionComponent] connect() response');
         } catch (err) {
             console.warn(err);
